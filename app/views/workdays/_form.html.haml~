@@ -1,0 +1,7 @@
+= simple_form_for(@workday) do |f|
+  = f.error_notification
+  .inputs
+    = f.input :day
+    = f.input :user_id
+  .actions
+    = f.button :submit

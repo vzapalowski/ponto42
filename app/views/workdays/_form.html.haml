@@ -1,0 +1,8 @@
+= simple_form_for(@workday) do |f|
+  = f.error_notification
+  .inputs
+    = f.input :day
+    = f.simple_fields_for :periods do |period|
+      - render 'period_fields' , :f => period
+  .actions
+    = f.button :submit
