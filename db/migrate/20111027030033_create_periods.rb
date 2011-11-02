@@ -3,7 +3,7 @@ class CreatePeriods < ActiveRecord::Migration
     create_table :periods do |t|
       t.time :begin
       t.time :end
-      t.integer :workday
+      t.integer :workday_id
 
       t.timestamps
     end
