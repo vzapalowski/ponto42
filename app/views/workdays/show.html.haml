@@ -1,0 +1,14 @@
+%p#notice= notice
+%p
+  %b Day:
+  = @workday.day.to_s(:long)
+- @workday.periods.each do |period|
+  %p
+    %b Begin
+    = period.begin.to_time.to_s(:short)
+    %b End
+    = period.end.to_time.to_s(:short)
+
+= link_to 'Edit', edit_workday_path(@workday)
+|
+\#{link_to 'Back', workdays_path}

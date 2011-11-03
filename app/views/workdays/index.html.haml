@@ -2,14 +2,18 @@
 %table
   %tr
     %th Day
-    %th User
-    %th
+    %th Begin
+    %th End
+    %th Begin
+    %th End
     %th
     %th
   - @workdays.each do |workday|
     %tr
-      %td= workday.day
-      %td= workday.user_id
+      %td= workday.day.to_s(:long)
+      - workday.periods.each do |period|
+        %td= period.begin.to_s(:short)
+        %td= period.end.to_s(:short)
       %td= link_to 'Show', workday
       %td= link_to 'Edit', edit_workday_path(workday)
       %td= link_to 'Destroy', workday, :confirm => 'Are you sure?', :method => :delete
