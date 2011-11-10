@@ -3,7 +3,6 @@ class WorkdaysController < ApplicationController
   # GET /workdays.xml
   def index
     @workdays = Workday.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @workdays }
@@ -43,14 +42,12 @@ class WorkdaysController < ApplicationController
   # POST /workdays.xml
   def create
     @workday = Workday.new(params[:workday])
-
+    @workday.user = current_user
     respond_to do |format|
       if @workday.save
         format.html { redirect_to(@workday, :notice => 'Workday was successfully created.') }
-        format.xml  { render :xml => @workday, :status => :created, :location => @workday }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @workday.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -59,7 +56,6 @@ class WorkdaysController < ApplicationController
   # PUT /workdays/1.xml
   def update
     @workday = Workday.find(params[:id])
-
     respond_to do |format|
       if @workday.update_attributes(params[:workday])
         format.html { redirect_to(@workday, :notice => 'Workday was successfully updated.') }
