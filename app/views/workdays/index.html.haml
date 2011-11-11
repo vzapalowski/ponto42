@@ -6,14 +6,16 @@
     %th End
     %th Begin
     %th End
+    %th Hours
     %th
     %th
   - @workdays.each do |workday|
     %tr
       %td= workday.day.to_s(:long)
       - workday.periods.each do |period|
-        %td= period.begin.to_s(:short)
-        %td= period.end.to_s(:short)
+        %td= period.begin.utc.strftime('%H:%M')
+        %td= period.end.utc.strftime('%H:%M')
+      %td= workday.worked_hours
       %td= link_to 'Show', workday
       %td= link_to 'Edit', edit_workday_path(workday)
       %td= link_to 'Destroy', workday, :confirm => 'Are you sure?', :method => :delete

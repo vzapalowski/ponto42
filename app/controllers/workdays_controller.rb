@@ -1,11 +1,13 @@
 class WorkdaysController < ApplicationController
+
+  before_filter :authenticate_user!
+
   # GET /workdays
   # GET /workdays.xml
   def index
-    @workdays = Workday.all
+    @workdays = Workday.find_all_by_user_id(current_user)
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @workdays }
     end
   end
 
