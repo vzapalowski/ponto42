@@ -15,7 +15,7 @@
       - workday.periods.each do |period|
         %td= period.begin.utc.strftime('%H:%M')
         %td= period.end.utc.strftime('%H:%M')
-      %td= workday.worked_hours
+      %td= workday.worked_hours.utc.strftime('%H:%M')
       %td= link_to 'Show', workday
       %td= link_to 'Edit', edit_workday_path(workday)
       %td= link_to 'Destroy', workday, :confirm => 'Are you sure?', :method => :delete

@@ -5,7 +5,7 @@ class Workday < ActiveRecord::Base
   accepts_nested_attributes_for :periods , :allow_destroy => true
 
   def worked_hours
-    sum = 0.hours
+    sum = Date.today.midnight
     self.periods.each do |period|
       sum += period.end - period.begin
     end
