@@ -4,6 +4,29 @@ gem 'rails', '3.0.9'
 gem 'simple_form'
 gem 'devise'
 gem 'haml'
+gem 'i18n_generators'
+gem 'brazilian-rails'
+gem 'sass'
+gem 'validates_timeliness'
+gem 'jquery-rails'
+
+group :test do
+  gem "spork", :git => "git://github.com/chrismdp/spork.git"
+  gem 'webrat'
+  gem 'metrical'
+  gem 'rspec-instafail'
+  gem 'factory_girl'
+  gem 'mocha'
+  gem 'autotest'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+  gem 'forgery'
+  gem 'fuubar'
+end
+
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
