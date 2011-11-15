@@ -15,7 +15,7 @@ group :test do
   gem 'webrat'
   gem 'metrical'
   gem 'rspec-instafail'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
   gem 'mocha'
   gem 'autotest'
   gem 'rspec-rails'
