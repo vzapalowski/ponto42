@@ -6,3 +6,7 @@ en:
   time:
     formats:
       short: "%H:%M"
+
+  workdays:
+    index:
+      title: 'Workdays'

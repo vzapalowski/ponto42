@@ -1,0 +1,15 @@
+
+pt-BR:
+  views:
+    workdays:
+      index:
+        title: 'Dias de trabalho'
+  models:
+    users:
+      password: 'Senha'
+    workdays:
+      periods: 'Períodos'
+      date: 'Data'
+    periods:
+      begin: 'Inicio'
+      end: 'Fim'

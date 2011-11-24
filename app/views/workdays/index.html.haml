@@ -1,11 +1,17 @@
-%h1 Listing workdays
+.title
+  = t('views.workdays.index.title')
 %table
   %tr
-    %th Day
-    %th Begin
-    %th End
-    %th Begin
-    %th End
+    %th
+      .header= t('models.workdays.date')
+    %th
+      .header= t('models.periods.begin')
+    %th
+      .header= t('models.periods.end')
+    %th
+      .header= t('models.periods.begin')
+    %th
+      .header= t('models.periods.end')
     %th Hours
     %th
     %th
